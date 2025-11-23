@@ -9,31 +9,35 @@
 
 <body>
 
-    <!-- ================== HEADER ================== -->
     <header class="header">
         <h2 class="logo">Portafolio | Johan Curicho</h2>
         <nav>
             <a href="#presentacion">Inicio</a>
             <a href="#habilidades">Habilidades</a>
+            <a href="#experiencia">Experiencia</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <!-- ================== PRESENTACIÓN NUEVA ================== -->
     <section id="presentacion" class="presentacion-v2">
-
         <div class="hero-wrapper">
-
-            <!-- FOTO -->
             <div class="foto-box perfil-github">
                 <img src="Johan.jpeg" alt="Foto de Johan">
             </div>
 
-            <!-- TEXTO -->
             <div class="hero-text">
-
-                <h1 class="titulo-gradiente">Hola,<br> Soy Johan Curicho</h1>
+                <h1 class="titulo-container">
+                    <span class="titulo-gradiente">
+                        Bienvenidos
+                    </span>
+                    <span class="hand">👋</span> <span class="titulo-gradiente">,
+                    </span>
+                    <br>
+                    <span class="titulo-gradiente">
+                        Soy Johan Curicho
+                    </span>
+                </h1>
 
                 <h2 class="subtitulo">Ingeniero en Software</h2>
 
@@ -62,7 +66,8 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <button class="btn-contacto">Charlemos ↓</button>
+                    <button class="btn-cv">Descargar CV</button>
+                    <a href="#contacto" class="btn-contacto">Charlemos ↓</a>
                 </div>
 
             </div>
@@ -72,37 +77,79 @@
     </section>
 
 
-    <!-- ================== HABILIDADES ================== -->
     <section id="habilidades">
-        <h1 class="title">Mis habilidades</h1>
-
+        <h2 class="section-title">✨ Mis Habilidades Técnicas</h2>
         <div class="scene">
             <img id="robot" class="robot" src="Skills.png" alt="robot">
             <div id="skillsContainer" class="skills-container"></div>
         </div>
     </section>
 
+    <section id="experiencia" class="experiencia-laboral-wrapper">
+        <h2 class="section-title">💼 Experiencia Laboral</h2>
+        
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Desarrollador Fullstack</h3>
+                <span class="job-date">Enero 2023 - Actualidad</span>
+            </div>
+            <p class="company-name">TechSolutions S.A.</p>
+            <ul class="job-tasks">
+                <li>Desarrollo y mantenimiento de API RESTful con **Node.js** y **Express**.</li>
+                <li>Implementación de interfaces de usuario con **Angular**, asegurando una experiencia responsiva.</li>
+                <li>Gestión de bases de datos relacionales (**PostgreSQL**) y no relacionales (**MongoDB**).</li>
+                <li>Colaboración en metodologías ágiles (**Scrum**) para la entrega continua de funcionalidades.</li>
+            </ul>
+        </div>
+        
+        <div class="job-card">
+            <div class="job-header">
+                <h3>Desarrollador Junior</h3>
+                <span class="job-date">Julio 2021 - Diciembre 2022</span>
+            </div>
+            <p class="company-name">Innovatech Group</p>
+            <ul class="job-tasks">
+                <li>Participación en el ciclo completo de desarrollo de aplicaciones web con **PHP** y **Laravel**.</li>
+                <li>Mantenimiento y optimización de bases de datos **MySQL**.</li>
+                <li>Creación de scripts de automatización para tareas internas.</li>
+            </ul>
+        </div>
 
-    <!-- ================== PROYECTOS ================== -->
+        <h2 class="section-title" style="margin-top: 60px;">🎓 Formación Académica</h2>
+        <div class="formacion-cards">
+            <div class="formacion-card">
+                <h3>Ingeniería en Software</h3>
+                <p>Universidad Politécnica Nacional - **2017 - 2022**</p>
+                <span class="formacion-details">Tesis en Sistemas de Información Distribuida.</span>
+            </div>
+             <div class="formacion-card">
+                <h3>Desarrollo Web Fullstack (Certificado)</h3>
+                <p>Platzi / Udemy - **2023**</p>
+                <span class="formacion-details">Especialización en MERN Stack.</span>
+            </div>
+        </div>
+    </section>
+
+
     <section id="proyectos" class="proyectos">
-        <h1>Proyectos de GitHub</h1>
+        <h2 class="section-title">🚀 Proyectos Destacados en GitHub</h2>
 
         <div class="cards-proyectos">
 
             <div class="proyecto-card">
-                <h3>📁 MiNegocio V2</h3>
+                <h3>MiNegocio V2</h3>
                 <p>Sistema ERP para gestión de inventarios, facturación y cuentas.</p>
                 <a href="https://github.com/tuusuario/Minegocio_V2" target="_blank">Ver en GitHub</a>
             </div>
 
             <div class="proyecto-card">
-                <h3>📱 App de Reportes Técnicos</h3>
+                <h3>App de Reportes Técnicos</h3>
                 <p>Aplicación móvil con reconocimiento de imágenes para reportes de servicio.</p>
                 <a href="https://github.com/tuusuario/app-reportes" target="_blank">Ver en GitHub</a>
             </div>
 
             <div class="proyecto-card">
-                <h3>🌐 Portafolio Web</h3>
+                <h3> Portafolio Web</h3>
                 <p>Mi portafolio personal con animaciones y showcase.</p>
                 <a href="https://github.com/tuusuario/portafolio" target="_blank">Ver en GitHub</a>
             </div>
@@ -111,20 +158,19 @@
     </section>
 
 
-    <!-- ================== CONTACTO / FOOTER ================== -->
     <footer id="contacto" class="footer">
-        <h2>Contacto</h2>
+        <h2 class="section-title">📞 Hablemos</h2>
 
-        <p>✉ Email: <strong>johancuricho935@gmail.com</strong></p>
-        <p>📞 Teléfono: <strong>0992778023</strong></p>
+        <p>Email: <strong>johancuricho935@gmail.com</strong></p>
+        <p>Teléfono: <strong>0992778023</strong></p>
 
         <div class="redes">
-            <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com/LizardCs" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/johan-c-31351a134" target="_blank">LinkedIn</a>
             <a href="https://wa.me/593" target="_blank">WhatsApp</a>
         </div>
 
-        <p class="copy">© 2025 Johan Dev – Todos los derechos reservados.</p>
+        <p class="copy">© 2025 Johan – Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>

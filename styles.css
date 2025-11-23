@@ -5,15 +5,150 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #1f1b3a, #07040f);
+  background: #07040f;
+  position: relative;
   min-height: 100vh;
-  font-family: system-ui;
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
+
+body::before {
+  content: "";
+  position: fixed;
+  left: -200px;
+  top: -200px;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, #5b51ff30, transparent 70%);
+  filter: blur(90px);
+  animation: float1 12s ease-in-out infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+body::after {
+  content: "";
+  position: fixed;
+  right: -180px;
+  bottom: -180px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #ff3bc430, transparent 70%);
+  filter: blur(95px);
+  animation: float2 14s ease-in-out infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes float1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    background: radial-gradient(circle, #5b51ff30, transparent 70%);
+    opacity: 0.50;
+  }
+
+  20% {
+    background: radial-gradient(circle, #665cff45, transparent 68%);
+    opacity: 0.58;
+  }
+
+  50% {
+    transform: translate(35px, 30px) scale(1.10);
+    background: radial-gradient(circle, #6c63ff80, transparent 60%);
+    opacity: 0.88;
+  }
+
+  80% {
+    background: radial-gradient(circle, #665cff45, transparent 68%);
+    opacity: 0.58;
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    background: radial-gradient(circle, #5b51ff30, transparent 70%);
+    opacity: 0.50;
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    background: radial-gradient(circle, #ff3bc430, transparent 70%);
+    opacity: 0.50;
+  }
+
+  20% {
+    background: radial-gradient(circle, #ff48d745, transparent 68%);
+    opacity: 0.58;
+  }
+
+  50% {
+    transform: translate(-40px, -25px) scale(1.10);
+    background: radial-gradient(circle, #ff4fd580, transparent 60%);
+    opacity: 0.88;
+  }
+
+  80% {
+    background: radial-gradient(circle, #ff48d745, transparent 68%);
+    opacity: 0.58;
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    background: radial-gradient(circle, #ff3bc430, transparent 70%);
+    opacity: 0.50;
+  }
+}
+
+
+/* ======================= TÍTULOS DE SECCIÓN ======================= */
+.section-title {
+  color: #fff;
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.2s ease;
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === AJUSTE DE ESPACIADO === */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+  width: 100%;
+}
+
+#presentacion {
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  scroll-margin-top: 100px;
+}
+
+/* ================================================================= */
+
 
 /* ======================= HEADER ======================= */
 .header {
@@ -47,14 +182,24 @@ html {
 
 /* ======================= PRESENTACIÓN V2 ======================= */
 .presentacion-v2 {
-  margin-top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 200px;
-  padding: 20px 40px;
   color: #fff;
 }
+
+/* Contenedor que agrupa foto + texto */
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  /* separación entre foto y texto */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
 
 /* FOTO REDONDA */
 .perfil-github {
@@ -63,7 +208,7 @@ html {
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid #ffffff;
-  box-shadow: 0 0 18px rgba(255,255,255,0.15);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
 }
 
@@ -80,14 +225,60 @@ html {
 }
 
 /* TITULO GRADIENTE */
-.titulo-gradiente {
+.titulo-container {
   font-size: 3.8rem;
   font-weight: 800;
   line-height: 1.1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.titulo-gradiente {
   background: linear-gradient(90deg, #dddddd, #5280ff);
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.hand {
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-left: 6px;
+  animation: wave 1.8s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(14deg);
+  }
+
+  30% {
+    transform: rotate(-8deg);
+  }
+
+  45% {
+    transform: rotate(14deg);
+  }
+
+  60% {
+    transform: rotate(-4deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 
 /* SUBTITULO */
 .subtitulo {
@@ -161,6 +352,8 @@ html {
   color: #8f7bff;
   cursor: pointer;
   transition: .3s;
+  text-decoration: none;
+  /* Asegura que el ancla se vea como botón */
 }
 
 .btn-contacto:hover {
@@ -170,39 +363,24 @@ html {
 
 /* ======================= HABILIDADES ======================= */
 #habilidades {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0;
-  padding-top: 0px; /* espacio por el header */
+  padding: 120px 0 60px;
 }
 
-
-.title {
-  color: #fff;
-  font-size: 2.2rem;
-  letter-spacing: 1.5px;
+/* Título de Habilidades */
+#habilidades .section-title {
   margin-bottom: 25px;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-  animation: fadeIn 1.2s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
-/* ESCENA ROBOT */
+/* ESCENA HABILIDADES */
 .scene {
-  width: 910px;
-  height: 380px;
+  width: 970px;
+  height: 405px;
   background: #0b0b11;
   border-radius: 28px;
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
   overflow: hidden;
 }
 
@@ -210,25 +388,99 @@ html {
   position: absolute;
   width: 260px;
   top: 50%;
-  transform: translateY(-50%);
-  left: 12%;
+  left: 50%;
+  /* Centrado inicial */
+  transform: translate(-50%, -50%);
   cursor: pointer;
-  animation: moveRobot 12s ease-in-out infinite alternate;
+  animation: bounce 2.5s ease-in-out infinite;
+  /* Animación de rebote */
 }
 
-@keyframes moveRobot {
-  0% { left: 20%; }
-  100% { left: 60%; }
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-15px);
+  }
 }
 
-.robot-lean {
-  animation: leanLeft 0.35s ease forwards;
+/* Animación: se desvanece del centro y reaparece a la izquierda */
+@keyframes fadeOutMoveLeft {
+
+  /* Estado inicial: visible en el centro */
+  0% {
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  49% {
+    opacity: 0;
+    left: 80%;
+    /* Sale de la vista por la derecha */
+    transform: translate(0, -50%);
+  }
+  50% {
+    opacity: 0;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Animación: se desvanece de la izquierda y reaparece en el centro */
+@keyframes fadeOutMoveCenter {
+
+  0% {
+    opacity: 1;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  49% {
+    opacity: 0;
+    left: -10%;
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(0px);
+  }
 }
 
 @keyframes leanLeft {
-  0% { transform: translateY(-50%) rotate(0deg); }
-  50% { transform: translateY(-50%) rotate(-12deg); }
-  100% { transform: translateY(-50%) rotate(0deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(-12deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.robot-lean {
+  animation: leanLeft 0.35s ease forwards !important;
 }
 
 .skills-container {
@@ -247,13 +499,16 @@ html {
   opacity: 0;
   transform: scale(0.4);
   transition: 0.35s ease;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
   pointer-events: auto;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   z-index: 1;
+  text-decoration: none;
 }
 
 .skill-card img {
@@ -263,6 +518,7 @@ html {
 
 .skill-card span {
   font-size: 0.65rem;
+  margin-top: 3px;
 }
 
 .skill-card.show {
@@ -275,12 +531,136 @@ html {
   z-index: 9999;
 }
 
+
+/* ======================= EXPERIENCIA Y FORMACIÓN ======================= */
+#experiencia {
+  scroll-margin-top: 100px;
+  /* Para la navegación */
+  padding: 80px 0;
+}
+
+.experiencia-laboral-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  max-width: 900px;
+}
+
+.job-card {
+  background: #11121b;
+  border-left: 5px solid #5b51ff;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.job-header h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.job-date {
+  color: #8f7bff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.job-tasks {
+  list-style: none;
+  padding: 0;
+}
+
+.job-tasks li {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.job-tasks li::before {
+  content: "▶";
+  color: #8f7bff;
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+/* Estilos de Formación Académica */
+.formacion-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.formacion-card {
+  width: 380px;
+  background: #11121b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  border-top: 3px solid #ff4fd8;
+  margin-bottom: 20px;
+}
+
+.formacion-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.formacion-card p {
+  color: #bbb;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.formacion-details {
+  display: block;
+  font-size: 0.9rem;
+  color: #8f7bff;
+  font-style: italic;
+}
+
+
 /* ======================= PROYECTOS ======================= */
+#proyectos {
+  padding: 80px 0;
+  scroll-margin-top: 100px;
+}
+
 .proyectos {
   width: 90%;
-  margin-top: 90px;
+  margin: 0 auto;
   color: #fff;
   text-align: center;
+  max-width: 1200px;
 }
 
 .cards-proyectos {
@@ -296,64 +676,48 @@ html {
   padding: 20px;
   border-radius: 12px;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
 
 .proyecto-card a {
   display: inline-block;
   color: #9b6bff;
   text-decoration: none;
+  margin-top: 10px;
 }
 
 /* ======================= FOOTER ======================= */
 .footer {
-  margin-top: 100px;
+  margin-top: 0;
   padding: 40px;
   background: #0b0b11;
   text-align: center;
   color: #fff;
+  scroll-margin-top: 100px;
+}
+
+.footer .section-title {
+  margin-bottom: 20px;
 }
 
 .footer .redes a {
   margin: 0 12px;
   color: #9b6bff;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .redes a:hover {
+  color: #ff4fd8;
 }
 
 .copy {
   margin-top: 15px;
   opacity: 0.6;
-}
-
-/* Ajuste navegación */
-#presentacion {
-  scroll-margin-top: 120px;
-}
-
-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 120px; /* secciones centradas sin quedar demasiado abajo */
-}
-
-/* Contenedor que agrupa foto + texto */
-.hero-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 120px;        /* separación entre foto y texto */
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* La sección ocupa toda la pantalla */
-.presentacion-v2 {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px; /* para que no lo tape el header */
 }
