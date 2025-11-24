@@ -1,6 +1,7 @@
 const robot = document.getElementById("robot");
 const skillsContainer = document.getElementById("skillsContainer");
 const btnCV = document.querySelector(".btn-cv");
+const perfilGithub = document.querySelector(".perfil-github"); // Obtener el elemento del perfil
 
 let launched = false; 
 let isAnimatingRobot = false; 
@@ -157,3 +158,24 @@ if (btnCV) {
         alert("Descargando CV de Johan Curicho... (Sustituye esta alerta por tu lógica de descarga)");
     });
 }
+
+// --- Animación de Borde de Perfil ---
+function startProfileAnimation() {
+    // 1. Iniciar la animación de carga rápida
+    perfilGithub.classList.add("loading");
+    
+    // 2. Después de un tiempo, detener la carga y activar el bucle
+    const loadingTime = 2000; // 2 segundos de "carga"
+
+    setTimeout(() => {
+        perfilGithub.classList.remove("loading");
+        
+        // 3. Establecer la posición final de la "carga" (arriba, 0 grados)
+        perfilGithub.style.setProperty('--initial-rotation', '360deg'); 
+        perfilGithub.classList.add("loaded"); 
+        
+    }, loadingTime);
+}
+
+// Inicia la animación cuando la página ha cargado
+window.addEventListener('load', startProfileAnimation);
