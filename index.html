@@ -3,203 +3,222 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Johan Curicho</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <h2 class="logo">Portafolio | Johan Curicho</h2>
-        <nav>
-            <a href="#presentacion">Inicio</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">Portafolio | Johan Curicho</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#trayectoria">Trayectoria & Skills</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="ri-menu-4-line"></i>
+        </div>
+    </nav>
 
-    <section id="presentacion" class="presentacion-v2">
-        <div class="hero-wrapper">
-            <div class="foto-box perfil-github">
-                <img src="Johan.jpeg" alt="Foto de Johan">
+    <section id="inicio" class="hero">
+        <div class="hero-content hero-row">
+
+            <!-- IZQUIERDA -->
+            <div class="hero-left">
+                <div class="perfil-github-wrapper">
+                    <div class="perfil-github">
+                        <img src="Johan.jpeg" alt="Johan Curicho">
+                    </div>
+                </div>
             </div>
 
-            <div class="hero-text">
-                <h1 class="titulo-container">
-                    <span class="titulo-gradiente">
-                        Bienvenidos
-                    </span>
-                    <span class="hand">👋</span> <span class="titulo-gradiente">,
-                    </span>
-                    <br>
-                    <span class="titulo-gradiente">
-                        Soy Johan Curicho
-                    </span>
-                </h1>
+            <!-- DERECHA -->
+            <div class="hero-right">
+                <h1>Bienvenidos <span class="hand">👋</span>,<br>
+                    Soy Johan Curicho</h1>
+                <h2 class="gradient-text">Ingeniero en Software</h2>
 
-                <h2 class="subtitulo">Ingeniero en Software</h2>
-
-                <p class="descripcion-hero">
-                    Desarrollador <span>Fullstack</span> especializado en crear soluciones web
-                    <span>innovadoras</span> y <span>eficientes</span>. Comprometido con la excelencia técnica
-                    y la entrega de productos de alta calidad.
+                <p>
+                    Desarrollador Fullstack especializado en crear soluciones
+                    <span class="highlight">innovadoras</span> y <span class="highlight">eficientes</span>.
                 </p>
 
-                <div class="hero-icons">
-
-                    <a href="https://linkedin.com/in/johan-c-31351a134" class="icon-btn" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
-                    </a>
-
-                    <a href="https://github.com/LizardCs" class="icon-btn" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                            alt="GitHub">
-                    </a>
-
-                    <a href="https://discord.com/users/475850823889321984" class="icon-btn" target="_blank">
-                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/discord.svg"
-                            alt="Discord">
-                    </a>
-
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/johan-c-31351a134" target="_blank"><i
+                            class="ri-linkedin-fill"></i></a>
+                    <a href="https://github.com/LizardCs" target="_blank"><i class="ri-github-fill"></i></a>
+                    <a href="https://discord.com/users/475850823889321984" target="_blank"><i
+                            class="ri-discord-fill"></i></a>
                 </div>
 
-                <div class="hero-buttons">
+                <div class="cta-buttons">
                     <button class="btn-cv">Mi Hoja de vida</button>
-                    <a href="#contacto" class="btn-contacto">Charlemos ↓</a>
+                    <a href="#contacto" class="btn-secondary">
+                        Charlemos <i class="ri-arrow-down-line"></i>
+                    </a>
                 </div>
-
             </div>
 
         </div>
 
+        <div class="bg-blur purple"></div>
+        <div class="bg-blur cyan"></div>
     </section>
 
+    <section id="trayectoria" class="bento-section">
+        <h2 class="section-title"> Mi trayectoria profesional</h2>
 
-    <section id="habilidades">
-        <h2 class="section-title">✨ Habilidades Técnicas</h2>
-        <div class="scene">
-            <img id="robot" class="robot" src="Skills.png" alt="robot">
-            <div id="skillsContainer" class="skills-container"></div>
-        </div>
-    </section>
+        <div class="bento-grid">
 
-    <section id="experiencia" class="experiencia-laboral-wrapper">
-        <h2 class="section-title">💼 Experiencia Laboral</h2>
-        
-        <div class="job-card">
-            <div class="job-header">
-                <h3>Desarrollador Fullstack</h3>
-                <span class="job-date">Enero 2023 - Actualidad</span>
-            </div>
-            <p class="company-name">TechSolutions S.A.</p>
-            <ul class="job-tasks">
-                <li>Desarrollo y mantenimiento de API RESTful con **Node.js** y **Express**.</li>
-                <li>Implementación de interfaces de usuario con **Angular**, asegurando una experiencia responsiva.</li>
-                <li>Gestión de bases de datos relacionales (**PostgreSQL**) y no relacionales (**MongoDB**).</li>
-                <li>Colaboración en metodologías ágiles (**Scrum**) para la entrega continua de funcionalidades.</li>
-            </ul>
-        </div>
-        
-        <div class="job-card">
-            <div class="job-header">
-                <h3>Desarrollador Junior</h3>
-                <span class="job-date">Julio 2021 - Diciembre 2022</span>
-            </div>
-            <p class="company-name">Innovatech Group</p>
-            <ul class="job-tasks">
-                <li>Participación en el ciclo completo de desarrollo de aplicaciones web con **PHP** y **Laravel**.</li>
-                <li>Mantenimiento y optimización de bases de datos **MySQL**.</li>
-                <li>Creación de scripts de automatización para tareas internas.</li>
-            </ul>
-        </div>
+            <div class="info-column">
 
-        <h2 class="section-title" style="margin-top: 60px;">🎓 Formación Académica</h2>
-        <div class="formacion-cards">
-            <div class="formacion-card">
-                <h3>Ingeniería en Software</h3>
-                <p>Universidad Politécnica Nacional - **2017 - 2022**</p>
-                <span class="formacion-details">Tesis en Sistemas de Información Distribuida.</span>
-            </div>
-             <div class="formacion-card">
-                <h3>Desarrollo Web Fullstack (Certificado)</h3>
-                <p>Platzi / Udemy - **2023**</p>
-                <span class="formacion-details">Especialización en MERN Stack.</span>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="proyectos" class="proyectos">
-        <h2 class="section-title">🚀 Proyectos GitHub</h2>
-
-        <div class="cards-proyectos">
-
-            <div class="proyecto-card">
-                <h3 class="proyecto-title">Simulador Financiero</h3>
-                <p class="proyecto-description">Aplicación web para simular el crecimiento de inversiones, tasas de interés y generar reportes financieros.</p>
-                
-                <div class="project-image-placeholder">
-                    [Image of financial simulator app screen]
+                <div class="info-group">
+                    <h3 class="group-title"><i class="ri-briefcase-line"></i> Experiencia Laboral</h3>
+                    <div class="timeline">
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3>Desarrollador jr fullstack</h3>
+                                <span class="date">2025</span>
+                            </div>
+                            <p class="company">AlquimiaSoft S.A.</p>
+                            <ul>
+                                <li>Desarrollo de soluciones con <strong> Eclipse </strong>.</li>
+                                <li>Interfaces responsivas con <strong> Java GWT </strong>.</li>
+                            </ul>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3>Ayudante de Desarrollador</h3>
+                                <span class="date">2024 - 2025</span>
+                            </div>
+                            <p class="company">Casa de la cultura</p>
+                            <ul>
+                                <li>Desarrollo web con <strong>PHP</strong> y <strong>Wordpress</strong>.</li>
+                            </ul>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3>Servicio tecnico en aparatos electronicos</h3>
+                                <span class="date"> 2020 - 2025 </span>
+                            </div>
+                            <p class="company">Multijuego Cosmos Ambato</p>
+                            <ul>
+                                <li>Servicio tecnico especializado <strong> Compuradores - Laptops </strong>.</li>
+                                <li>Automatizacion de procesos dentro de sistemas <strong> archivos ejecutables .bat
+                                    </strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="proyecto-tags">
-                    <span class="tag html">HTML</span>
-                    <span class="tag css">CSS</span>
-                    <span class="tag js">JavaScript</span>
+                <div class="info-group education-group">
+                    <h3 class="group-title"><i class="ri-graduation-cap-line"></i> Formación Académica</h3>
+                    <div class="timeline">
+                        <div class="job-card education-card">
+                            <div class="job-header">
+                                <h3>Ingeniería de Software</h3>
+                                <span class="date">2019 - 2025</span>
+                            </div>
+                            <p class="company">Universidad Técnica de Ambato</p>
+                            <p class="edu-desc">Especialización en desarrollo de sistemas y arquitectura de software.
+                            </p>
+                        </div>
+                        <div class="job-card education-card">
+                            <div class="job-header">
+                                <h3>Bachiller en ciencias naturales</h3>
+                                <span class="date">2012 - 2018</span>
+                            </div>
+                            <p class="company">Mario Cobo Barona</p>
+                            <p class="edu-desc">Segundo grado de educación básica.</p>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/OscarJRM/financial-simulator-app" class="btn-repo" target="_blank">Ver en GitHub</a>
+
             </div>
 
-            <div class="proyecto-card">
-                <h3 class="proyecto-title">Sistema de Autenticación</h3>
-                <p class="proyecto-description">Implementación de métodos avanzados de autenticación y gestión de usuarios para entornos empresariales.</p>
+            <div class="right-column-wrapper">
 
-                <div class="project-image-placeholder">
-                    [Image of security and authentication system UI]
-                </div>
-                
-                <div class="proyecto-tags">
-                    <span class="tag java">Java</span>
-                    <span class="tag spring">Spring</span>
-                    <span class="tag sql">SQL</span>
-                </div>
-                <a href="https://github.com/VillafuerteJonathan/seguridad1" class="btn-repo" target="_blank">Ver en GitHub</a>
-            </div>
+                <div class="skills-header">
+                    <h3 class="group-title">
+                        <i class="ri-settings-4-line"></i> Habilidades técnicas
+                    </h3>
 
-            <div class="proyecto-card">
-                <h3 class="proyecto-title">ElectronicA Mantilla </h3>
-                <p class="proyecto-description">Plataforma de reportes de servicios a dispositivos electrónicos, gestión de reportes.</p>
+                    <p class="instruction-text">(Haz click para ver mis habilidades)</p>
+                </div>
 
-                <div class="project-image-placeholder">
-                    [Image of electronic services report platform interface]
+                <div class="skills-column">
+                    <div class="scene">
+                        <img id="robot" class="robot" src="Skills.png" alt="robot">
+                        <div id="skillsContainer" class="skills-container"></div>
+                    </div>
                 </div>
-                
-                <div class="proyecto-tags">
-                    <span class="tag php">PHP</span>
-                    <span class="tag laravel">HTML</span> <span class="tag mysql">MySQL</span>
-                </div>
-                <a href="https://github.com/LizardCs/electronic-mantilla" class="btn-repo" target="_blank">Ver en GitHub</a>
+
             </div>
 
         </div>
     </section>
 
-
-    <footer id="contacto" class="footer">
-        <h2 class="section-title">📞 Conversemos</h2>
-
-        <p>Email: <strong>johancuricho935@gmail.com</strong></p>
-        <p>Teléfono: <strong>0992778023</strong></p>
-
-        <div class="redes">
-            <a href="https://github.com/LizardCs" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/johan-c-31351a134" target="_blank">LinkedIn</a>
-            <a href="https://wa.me/593" target="_blank">WhatsApp</a>
+    <section id="proyectos" class="projects-section">
+        <h2 class="section-title">Proyectos GitHub</h2>
+        <div class="projects-grid">
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="status-bar"><span>9:41</span><span>•••</span></div>
+                    <div class="app-header">
+                        <h3>Simulador Fin.</h3>
+                    </div>
+                    <div class="app-content">
+                        <p>Simulación de inversiones.</p>
+                        <div class="tags"><span class="tag js">JS</span><span class="tag html">HTML</span></div>
+                        <div class="app-preview-box">💰</div>
+                    </div>
+                    <a href="https://github.com/OscarJRM/financial-simulator-app" target="_blank"
+                        class="btn-app">GitHub</a>
+                </div>
+            </div>
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="status-bar"><span>9:41</span><span>•••</span></div>
+                    <div class="app-header">
+                        <h3>Auth System</h3>
+                    </div>
+                    <div class="app-content">
+                        <p>Seguridad empresarial.</p>
+                        <div class="tags"><span class="tag java">Java</span><span class="tag spring">Spring</span></div>
+                        <div class="app-preview-box">🔒</div>
+                    </div>
+                    <a href="https://github.com/VillafuerteJonathan/seguridad1" target="_blank"
+                        class="btn-app purple">GitHub</a>
+                </div>
+            </div>
+            <div class="phone-mockup">
+                <div class="screen">
+                    <div class="status-bar"><span>9:41</span><span>•••</span></div>
+                    <div class="app-header">
+                        <h3>Electrónica M.</h3>
+                    </div>
+                    <div class="app-content">
+                        <p>Gestión de servicios.</p>
+                        <div class="tags"><span class="tag php">PHP</span><span class="tag sql">MySQL</span></div>
+                        <div class="app-preview-box">⚡</div>
+                    </div>
+                    <a href="https://github.com/LizardCs/electronic-mantilla" target="_blank"
+                        class="btn-app blue">GitHub</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <p class="copy">© 2025 Johan – Todos los derechos reservados.</p>
+    <footer id="contacto">
+        <h2>Informacion de contacto. </h2>
+        <p>johancuricho935@gmail.com</p>
+        <p class="copyright">© 2025 Johan Curicho.</p>
     </footer>
 
     <script src="script.js"></script>
