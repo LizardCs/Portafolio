@@ -3,6 +3,7 @@
     --card-bg: #12121a;
     --primary: #a855f7;
     --secondary: #06b6d4;
+    --whatsapp: #25D366;
     --text-main: #ffffff;
     --text-gray: #94a3b8;
     --font-main: 'Outfit', sans-serif;
@@ -84,15 +85,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 70px;
-
-    /* El ancho REAL del contenedor */
     max-width: 1400px;
     width: 100%;
-
-    /* Centrado horizontal del bloque */
     margin: 0 auto;
-
-    /* Como ahora ya no será centrado el texto */
     text-align: left;
 }
 
@@ -123,17 +118,15 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: conic-gradient(
-        transparent 0deg,
-        transparent 260deg,
-        rgba(6,182,212,0.0) 270deg,
-        rgba(6,182,212,0.7) 300deg,
-        rgba(168,85,247,1) 330deg,
-        rgba(168,85,247,0.0) 360deg
-    );
+    background: conic-gradient(transparent 0deg,
+            transparent 260deg,
+            rgba(6, 182, 212, 0.0) 270deg,
+            rgba(6, 182, 212, 0.7) 300deg,
+            rgba(168, 85, 247, 1) 330deg,
+            rgba(168, 85, 247, 0.0) 360deg);
     animation: spin-loop 12s linear infinite;
     z-index: 2;
-    filter: drop-shadow(0 0 8px rgba(168,85,247,0.6));
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
 }
 
 .perfil-github::after {
@@ -141,25 +134,48 @@ body {
     position: absolute;
     inset: 5px;
     border-radius: 50%;
-    background: white;  
-    z-index: 1; /* ↓ borde blanco queda abajo */
+    background: white;
+    z-index: 1;
+    /* ↓ borde blanco queda abajo */
 }
 
 .perfil-github img {
     width: 95%;
     height: 95%;
     object-fit: cover;
-    object-position: center -20px; 
+    object-position: center -20px;
     border-radius: 50%;
     z-index: 3;
     position: relative;
 }
 
-.perfil-github.loading::before { animation: spin-load 0.8s linear infinite; }
-.perfil-github.loaded::before { animation: spin-loop 12s linear infinite; }
+.perfil-github.loading::before {
+    animation: spin-load 0.8s linear infinite;
+}
 
-@keyframes spin-load { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-@keyframes spin-loop { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.perfil-github.loaded::before {
+    animation: spin-loop 12s linear infinite;
+}
+
+@keyframes spin-load {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-loop {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* TEXTOS */
 .gradient-text {
@@ -235,10 +251,9 @@ body {
     gap: 5px;
 }
 
-/* --- BENTO GRID: LAYOUT PRINCIPAL --- */
 .bento-section {
-    padding: 80px 2%; /* Márgenes laterales reducidos */
-    max-width: 1800px; /* Ancho máximo aumentado */
+    padding: 80px 2%;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -251,12 +266,9 @@ body {
 
 .bento-grid {
     display: grid;
-    /* CAMBIO CLAVE: 0.8fr (izquierda) y 1.2fr (derecha) */
-    /* Esto hace que la derecha sea más ancha/larga visualmente */
-    grid-template-columns: 0.8fr 1.2fr; 
+    grid-template-columns: 0.8fr 1.2fr;
     gap: 40px;
-    /* CAMBIO CLAVE: center alinea la derecha al medio verticalmente */
-    align-items: center; 
+    align-items: center;
 }
 
 /* --- COLUMNA IZQUIERDA: INFO Y EDUCACION --- */
@@ -279,10 +291,14 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .group-title.center {
     justify-content: center;
 }
-.group-title i { color: var(--primary); }
+
+.group-title i {
+    color: var(--primary);
+}
 
 .job-card {
     background: var(--card-bg);
@@ -309,12 +325,14 @@ body {
     margin-bottom: 5px;
 }
 
-.job-header h3 { font-size: 1.1rem; }
+.job-header h3 {
+    font-size: 1.1rem;
+}
 
 .date {
     font-size: 0.85rem;
     color: var(--text-gray);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     padding: 2px 8px;
     border-radius: 4px;
     height: fit-content;
@@ -327,7 +345,10 @@ body {
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
-.education-card .company { color: var(--primary); }
+
+.education-card .company {
+    color: var(--primary);
+}
 
 .job-card ul {
     padding-left: 20px;
@@ -342,8 +363,8 @@ body {
 
 /* --- COLUMNA DERECHA: ROBOT Y SKILLS --- */
 .skills-column {
-    background: #0b0c12; 
-    border: 1px solid #2a2a35; 
+    background: #0b0c12;
+    border: 1px solid #2a2a35;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -351,17 +372,17 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0;
-    
+
     /* Altura mínima para que no se aplaste, pero se estira a lo ancho */
-    min-height: 450px; 
+    min-height: 450px;
     width: 85%;
 }
 
 .skills-header {
-   color: var(--text-main);
-   margin-bottom: 20px; 
-   text-align: left; 
-   width: 100%;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
 }
 
 .instruction-text {
@@ -372,7 +393,8 @@ body {
 
 /* Escena centrada */
 .scene {
-    width: 100%; /* Ocupa todo el ancho disponible */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
     height: 350px;
     position: relative;
     display: flex;
@@ -392,21 +414,26 @@ body {
     /* La animación ahora se encargará de mantenerlo centrado */
     animation: bounce 2.5s ease-in-out infinite;
     z-index: 10;
-    transition: opacity 1s ease-in-out; /* Importante para el efecto lento */
+    transition: opacity 1s ease-in-out;
+    /* Importante para el efecto lento */
     opacity: 1;
 }
 
 .robot.faded {
     opacity: 0;
-    pointer-events: none; /* Para no dar clic a la nada */
+    pointer-events: none;
+    /* Para no dar clic a la nada */
 }
 
 /* 2. Corregimos la animación para que NO pierda el centro al moverse */
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         /* Se mantiene centrado en X (-50%) y en Y (-50%) */
         transform: translate(-50%, -50%);
     }
+
     50% {
         /* Se mantiene centrado en X (-50%), pero sube 15px en Y */
         transform: translate(-50%, calc(-50% - 15px));
@@ -536,7 +563,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #444;
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     margin-bottom: auto;
 }
 
@@ -552,8 +579,14 @@ body {
     font-size: 0.95rem;
     font-weight: 600;
 }
-.btn-app.purple { background: linear-gradient(90deg, #a855f7, #d946ef); }
-.btn-app.blue { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
+
+.btn-app.purple {
+    background: linear-gradient(90deg, #a855f7, #d946ef);
+}
+
+.btn-app.blue {
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
+}
 
 /* FOOTER */
 footer {
@@ -563,9 +596,21 @@ footer {
     border-top: 1px solid #1a1a24;
     color: white;
 }
-footer h2 { margin-bottom: 10px; }
-footer p { color: var(--text-gray); margin-bottom: 20px; }
-.copyright { font-size: 0.8rem; opacity: 0.5; margin-top: 30px; }
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 30px;
+}
 
 /* BLUR EFFECTS */
 .bg-blur {
@@ -577,42 +622,64 @@ footer p { color: var(--text-gray); margin-bottom: 20px; }
     opacity: 0.2;
     z-index: 0;
 }
-.bg-blur.purple { top: 10%; left: -10%; background: var(--primary); }
-.bg-blur.cyan { bottom: 10%; right: -10%; background: var(--secondary); }
+
+.bg-blur.purple {
+    top: 10%;
+    left: -10%;
+    background: var(--primary);
+}
+
+.bg-blur.cyan {
+    bottom: 10%;
+    right: -10%;
+    background: var(--secondary);
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 1024px) {
     .bento-grid {
-        grid-template-columns: 1fr; /* Una sola columna en tablets/móvil */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .right-column-wrapper {
-        order: -1; /* Opcional: poner habilidades primero en móvil */
+        order: -1;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .menu-toggle { display: block; color: white; }
-    
-    .hero { padding-top: 100px; }
-    .hero h1 { font-size: 1.8rem; }
-    
-    .projects-grid { gap: 20px; }
-    
-    .scene {
-        height: 350px; 
+    .nav-links {
+        display: none;
     }
-    
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .scene {
+        height: 350px;
+    }
+
     .robot {
-        width: 140px; 
+        width: 140px;
     }
 }
 
 .instruction-text {
-    /* ... tus estilos actuales ... */
-    transition: color 0.5s ease; /* Suaviza el cambio de color */
+    transition: color 0.5s ease;
 }
 
 /* === AJUSTES PARA FOTO IZQUIERDA / TEXTO DERECHA === */
@@ -665,17 +732,40 @@ footer p { color: var(--text-gray); margin-bottom: 20px; }
 }
 
 @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
-/* === FLIP CARD 3D PARA MODELOS IA === */
+/* === FLIP CARD 3D === */
 
 .flip-card {
     width: 280px;
@@ -785,9 +875,20 @@ footer p { color: var(--text-gray); margin-bottom: 20px; }
 }
 
 /* Colores */
-.info-card.purple { border-color: var(--primary); color: var(--primary); }
-.info-card.cyan { border-color: var(--secondary); color: var(--secondary); }
-.info-card.red { border-color: #ff5e78; color: #ff5e78; }
+.info-card.purple {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.info-card.cyan {
+    border-color: var(--whatsapp);
+    color: var(--whatsapp);
+}
+
+.info-card.red {
+    border-color: #ff5e78;
+    color: #ff5e78;
+}
 
 /* COLUMNA DERECHA - CELULAR */
 .contact-image {
@@ -798,7 +899,7 @@ footer p { color: var(--text-gray); margin-bottom: 20px; }
 
 .contact-image img {
     width: 330px;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.4));
 }
 
 /* Animación de vibración */
@@ -807,12 +908,29 @@ footer p { color: var(--text-gray); margin-bottom: 20px; }
 }
 
 @keyframes phoneShake {
-    0% { transform: rotate(0deg); }
-    20% { transform: rotate(3deg); }
-    40% { transform: rotate(-3deg); }
-    60% { transform: rotate(2deg); }
-    80% { transform: rotate(-2deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(3deg);
+    }
+
+    40% {
+        transform: rotate(-3deg);
+    }
+
+    60% {
+        transform: rotate(2deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* RESPONSIVE */
