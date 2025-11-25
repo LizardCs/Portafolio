@@ -157,9 +157,6 @@ function absorbSkills() {
     }, cards.length * 50 + 600); 
 }
 
-// Otros scripts (CV, Perfil...)
-if (btnCV) { btnCV.addEventListener("click", () => { alert("Descargando CV..."); }); }
-
 function startProfileAnimation() {
     if (!perfilGithub) return;
     perfilGithub.classList.add("loading");

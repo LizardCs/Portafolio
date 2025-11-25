@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="cta-buttons">
-                    <button class="btn-cv">Mi Hoja de vida</button>
+                    <a href="docs/CVJC.pdf" download class="btn-cv">Mi Hoja de vida</a>
                     <a href="#contacto" class="btn-secondary">
                         Charlemos <i class="ri-arrow-down-line"></i>
                     </a>
@@ -208,10 +208,10 @@
                         <div class="screen">
                             <div class="status-bar"><span>•••</span><span>•••</span></div>
                             <div class="app-header">
-                                <h3>Auth System</h3>
+                                <h3>Secure File Vault</h3>
                             </div>
                             <div class="app-content">
-                                <p>Seguridad empresarial.</p>
+                                <p>Seguridad dentro de documentos y encriptacion con doble autentificación.</p>
                                 <div class="tags">
                                     <span class="tag">NodeJS</span>
                                     <span class="tag">TypeScript</span>
@@ -224,7 +224,7 @@
                     </div>
 
                     <div class="flip-back">
-                        <img src="img/planta.jpg" class="flip-img" alt="Auth System">
+                        <img src="img/seguridad.png" class="flip-img" alt="Auth System">
                     </div>
 
                 </div>
@@ -254,7 +254,7 @@
                     </div>
 
                     <div class="flip-back">
-                        <img src="img/planta.jpg" class="flip-img" alt="Electrónica M">
+                        <img src="img/electronicam.png" class="flip-img" alt="Electrónica M">
                     </div>
 
                 </div>
@@ -284,37 +284,7 @@
                     </div>
 
                     <div class="flip-back">
-                        <img src="img/planta.jpg" class="flip-img" alt="Angular Clientes">
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- 5. API Spring Boot (FLIP) -->
-            <div class="phone-mockup flip-card">
-                <div class="flip-inner">
-
-                    <div class="flip-front">
-                        <div class="screen">
-                            <div class="status-bar"><span>•••</span><span>•••</span></div>
-                            <div class="app-header">
-                                <h3>Cliente API</h3>
-                            </div>
-                            <div class="app-content">
-                                <p>API REST con Spring Boot.</p>
-                                <div class="tags">
-                                    <span class="tag">Java</span>
-                                    <span class="tag">Spring</span>
-                                </div>
-                                <div class="app-preview-box">☕</div>
-                            </div>
-                            <a href="https://github.com/LizardCs/cliente-api" target="_blank"
-                                class="btn-app blue">Código</a>
-                        </div>
-                    </div>
-
-                    <div class="flip-back">
-                        <img src="img/planta.jpg" class="flip-img" alt="Cliente API">
+                        <img src="img/clientesAng.png" class="flip-img" alt="Angular Clientes">
                     </div>
 
                 </div>
@@ -354,13 +324,66 @@
     </section>
 
 
-    <footer id="contacto">
-        <h2>Informacion de contacto. </h2>
-        <p>johancuricho935@gmail.com</p>
-        <p class="copyright">© 2025 Johan Curicho.</p>
-    </footer>
+    <section id="contacto" class="contact-section">
+
+    <h2 class="contact-title">📬 Contáctame</h2>
+    <p class="contact-subtitle">
+        ¿Tienes un proyecto en mente? Estoy listo para colaborar contigo.
+    </p>
+
+    <div class="contact-grid">
+
+        <!-- IZQUIERDA -->
+        <div class="contact-info">
+
+            <div class="info-card purple">
+                <i class="ri-mail-fill"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>johancuricho935@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-card cyan">
+                <i class="ri-phone-fill"></i>
+                <div>
+                    <h4>Whatsapp</h4>
+                    <p>+593 99 397 2854</p>
+                </div>
+            </div>
+
+            <div class="info-card red">
+                <i class="ri-map-pin-fill"></i>
+                <div>
+                    <h4>Ubicación</h4>
+                    <p>Ambato, Ecuador</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DERECHA: Teléfono -->
+        <div class="contact-image">
+            <img src="img/contactame1.png" alt="Contacto" class="phone-vibrate">
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <script src="script.js"></script>
+
+    <!-- Script para activar el flip con clic -->
+    <script>
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+
 </body>
 
 </html>
