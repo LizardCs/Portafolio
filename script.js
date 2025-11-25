@@ -158,4 +158,58 @@ function startProfileAnimation() {
         perfilGithub.classList.add("loaded");
     }, 2000);
 }
+
+
+if (!document.getElementById("stars")) {
+    const starsDiv = document.createElement("div");
+    starsDiv.id = "stars";
+    document.body.appendChild(starsDiv);
+}
+if (!document.getElementById("shooting-stars")) {
+    const shootDiv = document.createElement("div");
+    shootDiv.id = "shooting-stars";
+    document.body.appendChild(shootDiv);
+}
+
+function createStars(amount = 140) {
+    const container = document.getElementById("stars");
+
+    for (let i = 0; i < amount; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        const size = Math.random() * 3 + 1;
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.left = x + "%";
+        star.style.top = y + "%";
+        star.style.animationDelay = Math.random() * 5 + "s";
+
+        container.appendChild(star);
+    }
+}
+createStars();
+
+function createShootingStar() {
+    const container = document.getElementById("shooting-stars");
+
+    const star = document.createElement("div");
+    star.classList.add("shooting-star");
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 40 + "%"; // solo arriba
+
+    container.appendChild(star);
+
+    setTimeout(() => star.remove(), 1500);
+}
+
+setInterval(() => {
+    createShootingStar();
+}, Math.random() * 3000 + 3000);
+
+
 window.addEventListener('load', startProfileAnimation);
