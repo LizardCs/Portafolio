@@ -212,9 +212,30 @@ body {
 }
 
 .social-icons a:hover {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: var(--secondary);
+    border-color: var(--secondary);
 }
+
+.social-icons a {
+    background: #1a1a24;
+    transition: 0.3s;
+}
+
+/* LinkedIn */
+.social-icons a.linkedin:hover {
+    background: #0077b5;
+}
+
+/* GitHub */
+.social-icons a.github:hover {
+    background: #333333;
+}
+
+/* Discord */
+.social-icons a.discord:hover {
+    background: #5865f2;
+}
+
 
 .cta-buttons {
     display: flex;
@@ -224,13 +245,14 @@ body {
 
 .btn-cv {
     padding: 12px 30px;
-    background: var(--primary);
+    background: var(--text-gray);
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .btn-cv:hover {
