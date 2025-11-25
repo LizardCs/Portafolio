@@ -211,5 +211,17 @@ setInterval(() => {
     createShootingStar();
 }, Math.random() * 3000 + 3000);
 
+const mailbox = document.querySelector(".mailbox");
+
+function animateMailbox() {
+    mailbox.classList.add("animate");
+    setTimeout(() => mailbox.classList.remove("animate"), 1300);
+}
+
+setInterval(animateMailbox, 1500);
+
+animateMailbox();
+
+
 
 window.addEventListener('load', startProfileAnimation);

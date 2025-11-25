@@ -1054,3 +1054,40 @@ footer p {
     }
 }
 
+.icon-title {
+    font-size: 1.9rem;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #ffffff; /* blanco elegante */
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.section-title:hover .icon-title {
+    opacity: 1;
+}
+
+.mailbox {
+    display: inline-block;
+    font-size: 2.6rem;
+    margin-right: 12px;
+    position: relative;
+    top: 2px;
+}
+
+.mailbox::before {
+    content: "📪"; /* estado inicial */
+    display: inline-block;
+    font-size: 2.6rem;
+    animation: mailboxCycle 4s ease-in-out infinite;
+}
+
+/* Recorrido: 📪 → 📫 → 📬 → 📭 → (repite) */
+@keyframes mailboxCycle {
+    0%   { content: "📪"; }  /* cerrado bandera abajo */
+    25%  { content: "📫"; }  /* cerrado bandera arriba */
+    50%  { content: "📬"; }  /* abierto con carta */
+    75%  { content: "📭"; }  /* abierto sin carta */
+    100% { content: "📪"; }  /* vuelve al inicio */
+}
+
